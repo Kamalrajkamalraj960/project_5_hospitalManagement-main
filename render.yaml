@@ -1,0 +1,6 @@
+services:
+  - type: web
+    name: city-hospital
+    env: python
+    buildCommand: "./build.sh"
+    startCommand: "gunicorn django_classes.wsgi:application"
