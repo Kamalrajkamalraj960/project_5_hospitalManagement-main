@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block title %}
+<title>Departments</title>
+{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <section class="py-5 bg-light">
+        <div class="container">
+
+            <!-- Heading -->
+            <div class="text-center mb-5">
+                <h2 class="fw-bold text-primary">Our Departments</h2>
+                <p class="text-muted" style="max-width: 700px; margin: auto;">
+                    <strong>City Hospital</strong> provides advanced medical services across multiple
+                    specialized departments, ensuring high-quality treatment, modern healthcare
+                    solutions, and compassionate patient care under one trusted institution.
+                </p>
+            </div>
+
+            <!-- Department Cards -->
+            <div class="row g-4">
+
+                {% for d in dept %}
+                <div class="col-md-3">
+                    <div class="card border-0 shadow-sm rounded-4 text-center p-4 h-100">
+                        <h5 class="fw-bold text-primary">{{ d.dep_name }}</h5>
+                        <p class="text-muted">
+                            {{ d.dep_description }}
+                        </p>
+                    </div>
+                </div>
+                {% endfor %}
+
+            </div>
+
+        </div>
+    </section>
+</div>
+{% endblock %}

@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% block title %}
+<title>Doctors</title>
+{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <section class="py-5 bg-white">
+        <div class="container">
+
+            <!-- Heading -->
+            <div class="text-center mb-5">
+                <h2 class="fw-bold text-primary">Our Doctors</h2>
+                <p class="text-muted" style="max-width: 700px; margin: auto;">
+                    Our skilled and dedicated medical professionals are committed to delivering
+                    exceptional healthcare services with compassion, expertise, and personalized
+                    attention to every patient at <strong>City Hospital</strong>.
+                </p>
+            </div>
+
+            <!-- Doctors Grid -->
+            <div class="row g-4">
+
+                {% for d in docs %}
+                <div class="col-md-4">
+                    <div class="card border-0 shadow-sm rounded-4 text-center p-4 h-100">
+
+                        <!-- Doctor Image -->
+                        <img src="{{ d.dep_image.url }}" class="rounded-circle mb-3 mx-auto shadow" width="120"
+                            height="120" alt="Doctor">
+
+                        <!-- Doctor Name -->
+                        <h5 class="fw-bold text-primary">{{ d.doc_name }}</h5>
+
+                        <!-- Specialization -->
+                        <p class="text-muted mb-1">{{ d.doc_spec }}</p>
+
+                        <!-- Department -->
+                        <small class="text-muted">
+                            {{ d.dep_name.dep_name }}
+                        </small>
+
+                    </div>
+                </div>
+                {% empty %}
+                <p class="text-center text-muted">No doctors available.</p>
+                {% endfor %}
+
+            </div>
+
+        </div>
+    </section>
+</div>
+{% endblock %}

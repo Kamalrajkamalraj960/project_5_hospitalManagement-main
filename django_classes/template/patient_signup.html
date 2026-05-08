@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}
+<title>Patient Signup</title>
+{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2 class="text-center">Patient Registration</h2>
+
+    <form method="POST" class="w-50 mx-auto">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button class="btn btn-success w-100">Register</button>
+    </form>
+</div>
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block title %}
+<title>Patient Dashboard</title>
+{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2>Patient Dashboard</h2>
+
+    <div class="mt-4">
+        <a href="{% url 'upload_report' %}" class="btn btn-success">Upload Report</a>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+{% block title%}
+<title> Contact </title>
+{% endblock %}
+
+{% block content%}
+<div class="container mt-5">
+    <section class="py-5 bg-white">
+        <div class="container">
+            <div class="row">
+
+                <!-- Contact Info -->
+                <div class="col-md-5 mb-4">
+                    <h2 class="text-primary fw-bold mb-3">Contact Us</h2>
+
+                    <p class="text-muted" style="line-height: 1.8;">
+                        Have questions or need assistance? Our team at <strong>City Hospital</strong>
+                        is here to help you. Reach out to us for appointments, medical inquiries,
+                        or any support you may need. Your health and comfort are our priority.
+                    </p>
+
+                    <div class="mt-4">
+                        <p><strong>📍 Address:</strong> Calicut, Kerala, India</p>
+                        <p><strong>📞 Phone:</strong> +91 111 222 3334</p>
+                        <p><strong>📧 Email:</strong> info@cityhospital.com</p>
+                        <p><strong>🕒 Working Hours:</strong> 24/7 Emergency Services</p>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="col-md-7">
+                    <div class="card shadow-lg border-0 rounded-4 p-4">
+
+                        <h4 class="fw-bold mb-3 text-center">Send Us a Message</h4>
+
+                        <form>
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <input type="text" class="form-control rounded-3" placeholder="Your Name" required>
+                                </div>
+
+                                <div class="col-md-6 mb-3">
+                                    <input type="email" class="form-control rounded-3" placeholder="Your Email"
+                                        required>
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <input type="text" class="form-control rounded-3" placeholder="Subject">
+                            </div>
+
+                            <div class="mb-3">
+                                <textarea class="form-control rounded-3" rows="4" placeholder="Your Message..."
+                                    required></textarea>
+                            </div>
+
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-primary px-5 py-2 rounded-pill shadow">
+                                    Send Message
+                                </button>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+</div>
+{% endblock %}

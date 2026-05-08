@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block title %}
+<title>Upload Report</title>
+{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2>Upload Medical Report</h2>
+
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert alert-info">{{ message }}</div>
+        {% endfor %}
+    {% endif %}
+
+    <form method="POST" enctype="multipart/form-data" class="w-50">
+        {% csrf_token %}
+        <input type="file" name="report" class="form-control mb-3" required>
+        <button class="btn btn-primary">Upload</button>
+    </form>
+</div>
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block title %}
+<title>Login</title>
+{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Login</h2>
+
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert alert-danger">{{ message }}</div>
+        {% endfor %}
+    {% endif %}
+
+    <form method="POST" class="w-50 mx-auto">
+        {% csrf_token %}
+        <input type="text" name="username" class="form-control mb-3" placeholder="Username" required>
+        <input type="password" name="password" class="form-control mb-3" placeholder="Password" required>
+        <button class="btn btn-primary w-100">Login</button>
+    </form>
+
+    <p class="text-center mt-3">
+        New user? 
+        <a href="{% url 'patient_signup' %}">Patient Signup</a> |
+        <a href="{% url 'doctor_signup' %}">Doctor Signup</a>
+    </p>
+</div>
+{% endblock %}

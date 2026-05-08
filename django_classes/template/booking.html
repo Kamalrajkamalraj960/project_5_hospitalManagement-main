@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+
+{% block title %}
+<title>Booking</title>
+{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="row justify-content-center">
+
+                <div class="col-md-8">
+                    <div class="card shadow-lg border-0 rounded-4 p-4">
+
+                        <h2 class="text-center text-primary fw-bold mb-3">
+                            Book an Appointment
+                        </h2>
+
+                        <p class="text-center text-muted mb-4">
+                            Book your appointment quickly and easily with our experienced medical team.
+                            Provide your details below, and we will contact you soon to confirm your
+                            visit and ensure a smooth healthcare experience.
+                        </p>
+
+                        <!-- ✅ Success Message INSIDE card -->
+                        {% if messages %}
+                        {% for message in messages %}
+                        <div class="alert alert-success text-center">
+                            {{ message }}
+                        </div>
+                        {% endfor %}
+                        {% endif %}
+
+                        <!-- Booking Form -->
+                        <form method="POST">
+                            {% csrf_token %}
+
+                            {{ form|crispy }}
+
+                            <div class="text-center mt-3">
+                                <button type="submit" class="btn btn-primary px-5 py-2 rounded-pill shadow">
+                                    Confirm Booking
+                                </button>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+</div>
+{% endblock %}

@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block title %}
+<title>Home - City Hospital</title>
+{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+
+    <div class="row align-items-center g-4">
+
+        <!-- LEFT CONTENT -->
+        <div class="col-12 col-md-6 text-center text-md-start">
+
+            <h1 class="display-5 fw-bold text-primary mb-3">
+                Welcome to City Hospital
+            </h1>
+
+            <p class="lead text-muted mb-4">
+                Welcome to City Hospital, where expert healthcare meets genuine compassion.
+                We are committed to providing world-class medical services, modern facilities,
+                and personalized treatment plans to help every patient recover with confidence.
+                Our experienced medical team works tirelessly to ensure your comfort, safety,
+                and well-being every day.
+            </p>
+
+            <!-- Buttons -->
+            <div class="d-flex flex-column flex-sm-row gap-3 justify-content-center justify-content-md-start">
+                <a href="{% url 'booking' %}" class="btn btn-success btn-lg px-4 shadow">
+                    Book Appointment
+                </a>
+
+                <a href="{% url 'about' %}" class="btn btn-outline-success btn-lg px-4">
+                    Learn More
+                </a>
+            </div>
+
+        </div>
+
+        <!-- RIGHT IMAGE -->
+        <div class="col-12 col-md-6 text-center">
+            <img src="https://media.istockphoto.com/id/2161585533/photo/doctor-in-a-comfortable-office-using-ai-on-laptop-with-infographics-displayed.jpg?s=612x612&w=0&k=20&c=tpSvEHkimF67-fkB-UhN2EsZZkQxbCae6iH4jiQT2hM="
+                alt="Hospital" class="img-fluid rounded-4 shadow" style="max-height: 400px; object-fit: cover; border-radius: 30px;">
+        </div>
+
+    </div>
+
+</div>
+{% endblock %}
